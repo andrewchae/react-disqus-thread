@@ -114,7 +114,7 @@ module.exports = _react2.default.createClass({
     var _this = this;
 
     var props = Object.keys(this.props).reduce(function (memo, key) {
-      return DISQUS_PROPS.some(function (config) {
+      return DISQUS_PROPS.concat(DISQUS_CONFIG_ONLY_PROPS, DISQUS_CALLBACKS).some(function (config) {
         return config === key;
       }) ? memo : _extends({}, memo, _defineProperty({}, key, _this.props[key]));
     }, {});
